@@ -20,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/DiorAbjalilov/backend/issues"
   },
-  "homepage": "https://github.com/DiorAbjalilov/backend#readme"
+  "homepage": "https://github.com/DiorAbjalilov/backend#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2"
+  }
 }
