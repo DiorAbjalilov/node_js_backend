@@ -1,8 +1,19 @@
-const Logger = require("./logger");
+const http = require("http");
+const path = require("path");
+const fs = require("fs");
 
-const logger = new Logger();
-logger.on("message", (data) => {
-  console.log("Loggen: ", data);
+const server = http.createServer((req, res) => {
+  if (req.url === "/") {
+    const book = [
+      { name: "Diyor", age: 21, titile: "student" },
+      { name: "Adash", age: 20, titile: "student-1" },
+      { name: "Shahzod", age: 23, titile: "student-2" },
+    ];
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(book));
+  }
 });
 
-logger.log("GET", "admin/dashbord");
+const PORT = process.env.PORT || 3000;
+
+server.listen(PORT, console.log(`Server running on port: ${PORT}`));
